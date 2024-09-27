@@ -1,0 +1,130 @@
+const FACKDATA = [
+    {
+        id: 0,
+        image: 'https://i.ibb.co.com/p3pTVb3/animal-Shelter.png',
+        name: 'animal-shelter',
+        description: 'Foster a shelter animal.',
+    },
+    {
+        id: 1,
+        image: 'https://i.ibb.co.com/HGbLMD2/babySit.png',
+        name: 'babysit',
+        description: 'Babysit during PTA meetings.',
+    },
+    {
+        id: 2,
+        image: 'https://i.ibb.co.com/kJNDR0d/bird-House.png',
+        name: 'Bird House ',
+        description: 'Build birdhouses for your neighbors.',
+    },
+    {
+        id: 3,
+        image: 'https://i.ibb.co.com/Czj4XWN/child-Support.png',
+        name: 'Child Support',
+        description: 'Child Support',
+    },
+    {
+        id: 4,
+        image: 'https://i.ibb.co.com/nsd5vzP/clean-Water.png',
+        name: 'Clean Water',
+        description: 'Clean water for children.',
+    },
+    {
+        id: 5,
+        image: 'https://i.ibb.co.com/DCNbjY4/clearn-Park.png',
+        name: 'Clearn Park ',
+        description: 'Clean up your local park.',
+    },
+    {
+        id: 6,
+        image: 'https://i.ibb.co.com/LYm2pqG/cloth-Swap.png',
+        name: 'Cloth Swap ',
+        description: 'Host a clothing swap.',
+    },
+    {
+        id: 7,
+        image: 'https://i.ibb.co.com/KjccQf1/drive-Safety.png',
+        name: 'Drive Safety',
+        description: 'Give a seminar on driving safety.',
+    },
+    {
+        id: 8,
+        image: 'https://i.ibb.co.com/gJgmbbJ/extra-Volunteer.png',
+        name: 'Extra Volunteer',
+        description: 'Extra Volunteer',
+    },
+    {
+        id: 9,
+        image: 'https://i.ibb.co.com/b3dQNVt/food-Charity.png',
+        name: 'Food Charity',
+        description: 'Food Charity',
+    },
+    {
+        id: 10,
+        image: 'https://i.ibb.co.com/QK0KJSW/good-Education.png',
+        name: 'Good Education',
+        description: 'Good Education',
+    },
+    {
+        id: 11,
+        image: 'https://i.ibb.co.com/s6tTV35/ITHelp.png',
+        name: 'IT Help',
+        description: 'Give iT help to local adults',
+    },
+    {
+        id: 12,
+        image: 'https://i.ibb.co.com/TWcZtw9/library-Books.png',
+        name: 'Library Books',
+        description: 'Organize books at the library.',
+    },
+    {
+        id: 13,
+        image: 'https://i.ibb.co.com/0fy8GZc/music-Lessons.png',
+        name: 'Music Lessons',
+        description: 'Give free music lessons.',
+    },
+    {
+        id: 14,
+        image: 'https://i.ibb.co.com/WWX0BvQ/newBooks.png',
+        name: 'New Books',
+        description: 'New books for children.',
+    },
+    {
+        id: 15,
+        image: 'https://i.ibb.co.com/NNBkLHG/refuse-Shelter.png',
+        name: 'Refuse Shelter',
+        description: 'Refuse Shelter',
+    },
+    {
+        id: 16,
+        image: 'https://i.ibb.co.com/jLBJP6Q/river-Clean.png',
+        name: 'River Clean',
+        description: 'Host a river clean-up.',
+    },
+    {
+        id: 17,
+        image: 'https://i.ibb.co.com/c1NLhqJ/stuffed-Animals.png',
+        name: 'Stuffed Animals',
+        description: 'Collect stuffed animals.',
+    },
+    {
+        id: 18,
+        image: 'https://i.ibb.co.com/8rzWG5x/school-Suffiles.png',
+        name: 'School Suffiles',
+        description: 'Collect school supplies.',
+    },
+    {
+        id: 19,
+        image: 'https://i.ibb.co.com/MhyjgZz/study-Group.png',
+        name: 'Study Group',
+        description: 'Host a study group.',
+    },
+    {
+        id: 20,
+        image: 'https://i.ibb.co.com/7nm3Tff/vote-Register.png',
+        name: 'Vote Register',
+        description: 'Teach people how to register to vote.',
+    },
+]
+
+export default FACKDATA;
