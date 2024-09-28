@@ -5,6 +5,7 @@ import Home from './components/Home/Home';
 import RegisterVolunteer from './components/RegisterVolunteer/RegisterVolunteer';
 import Login from './components/Login/Login';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import Collection from './components/Collection/Collection';
 
 export const MyContext = createContext();
 
@@ -17,7 +18,8 @@ const App = () => {
         <Header />
         <Routes>
           <Route path='/home' element={<Home />} />
-          <Route path='/productDetail/:id' element={<PrivateRoute><RegisterVolunteer /></PrivateRoute>} />
+          <Route path='/registerVolunteer/item/:id' element={<PrivateRoute><RegisterVolunteer /></PrivateRoute>} />
+          <Route path='/collection' element={<PrivateRoute><Collection /></PrivateRoute>} />
           <Route path='/login' element={<Login />} />
         </Routes>
       </BrowserRouter>

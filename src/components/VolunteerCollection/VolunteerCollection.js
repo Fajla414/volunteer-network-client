@@ -7,7 +7,7 @@ const VolunteerCollection = ({volunteer}) => {
     return (
         <div className="col volunteerCollection-container">
             <div className="card h-100">
-               <Link to={`/productDetail/${id}`}><img src={image}  className="card-img-top img-fluid" alt={name} /></Link>
+               <Link to={`/registerVolunteer/item/${id}`}><img src={image}  className="card-img-top img-fluid" alt={name} /></Link>
                     <div className="card-body">
                         <h5 className="card-title">{description}</h5>
                     </div>

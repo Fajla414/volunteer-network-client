@@ -1,11 +1,17 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Form, InputGroup } from 'react-bootstrap';
 import VolunteerCollection from '../VolunteerCollection/VolunteerCollection';
-import FACKDATA from '../../data/fackData';
 
 const Home = () => {
-    const [volunteer, setVolunteer] = useState(FACKDATA);
-    
+    const [volunteer, setVolunteer] = useState([]);
+    useEffect(() => {
+        fetch(`http://localhost:5000/getProducts`)
+            .then(res => res.json())
+            .then(data => {
+                setVolunteer(data)
+            })
+    }, [])
+
 
     return (
         <div className='container my-5'>
