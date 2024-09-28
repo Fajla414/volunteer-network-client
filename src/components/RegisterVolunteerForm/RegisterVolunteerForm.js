@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useForm } from "react-hook-form"
+import { MyContext } from '../../App';
 
-const ProductDetailForm = () => {
+
+const RegisterVolunteerForm = () => {
+    const [loggedInUser, setLoggedInUser] = useContext(MyContext);
+
     const {
         register,
         handleSubmit,
@@ -17,24 +21,24 @@ const ProductDetailForm = () => {
 
     return (
         <form className='ship-form' onSubmit={handleSubmit(onSubmit)}>
-            <input name='fullname' className='form-control'   {...register("fulllname", { required: true })} placeholder='Full Name' />
+            <input name='fullname' defaultValue={loggedInUser.name} className='form-control'   {...register("fulllname", { required: true })} placeholder='Full Name' />
             {errors.exampleRequired && <span className='error'>Name is required</span>}
             <br />
-            <input name='usernameOrEmail' className='form-control'   {...register("usernameOrEmail", { required: true })} placeholder='Username or Email' />
+            <input name='usernameOrEmail' defaultValue={loggedInUser.email } className='form-control'   {...register("usernameOrEmail", { required: true })} placeholder='Username or Email' />
             {errors.exampleRequired && <span className='error'>Email is required</span>}
             <br />
-            <input name='date' className='form-control'  {...register("date", { required: true })} placeholder='Date' />
+            <input name='date' type='date' className='form-control'  {...register("date", { required: true })} placeholder='Date' />
             {errors.exampleRequired && <span className='error'>Address is required</span>}
             <br />
             <input name='description' className='form-control'  {...register("description", { required: true })} placeholder='Description' />
             {errors.exampleRequired && <span className='error'>Phone number is required</span>}
             <br />
-            <input name='organizeBooks ' className='form-control'  {...register("organizeBooks", { required: true })} placeholder='Organize Books at the library' />
+            <input name='organizeBooks ' className='form-control'  {...register("organizeBooks")} placeholder='Organize Books at the library(optional)' />
             {errors.exampleRequired && <span className='error'>Phone number is required</span>}
             <br />
-            <input type="submit" className='btn btn-primary container' />
+            <input type="submit" className='btn btn-primary container' value={"Registration"}/>
         </form>
-    )
-}
+    );
+};
 
-export default ProductDetailForm;
+export default RegisterVolunteerForm;
