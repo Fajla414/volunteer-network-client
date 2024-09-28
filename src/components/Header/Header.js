@@ -12,7 +12,7 @@ const Header = () => {
   const [loggedInUser, setLoggedInUser] = useContext(MyContext);
 
   return (
-    <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
+    <Navbar collapseOnSelect expand="lg" className='bg-light' >
       <Container>
         <Navbar.Brand as={Link} to={'/'}><img src={logo} className='img-fluid logo' alt="" /></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -23,8 +23,7 @@ const Header = () => {
             <Nav.Link as={Link} to={'/events'} className='mx-2 fw-bold'>Events</Nav.Link>
             <Nav.Link as={Link} to={'/blog'} className='mx-2 fw-bold'>Blog</Nav.Link>
             <Nav.Link as={Link} to={'/collection'} className='mx-2 fw-bold'>Collection</Nav.Link>
-            {loggedInUser.name === undefined ? <Nav.Link as={Link} to={'/register'} className='mx-2 '><button className='btn btn-primary fw-bold'>Register</button></Nav.Link> : <Nav.Link as={Link} to={'/profile'} className='mx-2 fw-bold'><img className='img-fluid rounded-circle' src={loggedInUser.photoURL} style={{ width: '40px' }} alt="" /></Nav.Link>}
-            <Nav.Link as={Link} to={'/admin'} className='mx-2 fw-bold'><button className='btn  btn-dark fw-bold'>Admin</button></Nav.Link>
+            {loggedInUser.name === undefined ? <><Nav.Link as={Link} to={'/login'} className='mx-2 '><button className='btn btn-primary fw-bold'>Register</button></Nav.Link><Nav.Link as={Link} to={'/admin'} className='mx-2 fw-bold'><button className='btn  btn-dark fw-bold'>Admin</button></Nav.Link></> : <Nav.Link as={Link} to={'/profile'} className='mx-2 fw-bold'><img className='img-fluid rounded-circle' src={loggedInUser.photoURL} style={{ width: '40px' }} alt="" /></Nav.Link>}
           </Nav>
         </Navbar.Collapse>
       </Container>

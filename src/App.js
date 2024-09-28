@@ -11,12 +11,13 @@ export const MyContext = createContext();
 
 const App = () => {
   const [loggedInUser, setLoggedInUser] = useState({});
-  
+
   return (
-    <MyContext.Provider value={[loggedInUser, setLoggedInUser]}>
+    <MyContext.Provider className="bg-body-tertiary" value={[loggedInUser, setLoggedInUser]}>
       <BrowserRouter>
         <Header />
         <Routes>
+          <Route path='/' element={<Home />} />
           <Route path='/home' element={<Home />} />
           <Route path='/registerVolunteer/item/:id' element={<PrivateRoute><RegisterVolunteer /></PrivateRoute>} />
           <Route path='/collection' element={<PrivateRoute><Collection /></PrivateRoute>} />

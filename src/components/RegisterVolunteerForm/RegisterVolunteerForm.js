@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form"
 import { MyContext } from '../../App';
 
 
-const RegisterVolunteerForm = ({voulnteerId}) => {
+const RegisterVolunteerForm = ({ voulnteerId, handleAlert }) => {
     const [loggedInUser, setLoggedInUser] = useContext(MyContext);
 
     const {
@@ -12,6 +12,7 @@ const RegisterVolunteerForm = ({voulnteerId}) => {
         formState: { errors },
     } = useForm()
 
+    
 
     const onSubmit = (data) => {
         const info = { ...loggedInUser, data, id: voulnteerId };
@@ -22,9 +23,8 @@ const RegisterVolunteerForm = ({voulnteerId}) => {
         })
             .then(res => res.json())
             .then(result => {
-                alert('successfully added')
+                handleAlert();
             })
-        // console.log(data)
     }
 
 
