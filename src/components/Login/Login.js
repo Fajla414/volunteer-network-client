@@ -14,7 +14,6 @@ firebase.initializeApp(firebaseConfig)
 
 const Login = () => {
     const [loggedInUser, setLoggedInUser] = useContext(MyContext);
-
     const navigate = useNavigate();
     const location = useLocation();
     const { from } = location.state || { from: { pathname: '/' } };
@@ -28,11 +27,23 @@ const Login = () => {
                 const { displayName, email, photoURL } = result.user;
                 const userInfo = { name: displayName, email, photoURL };
                 setLoggedInUser(userInfo);
-                navigate(from)
+                storeToken(result.user);
             }).catch((error) => {
                 console.log(error.code)
             });
     }
+
+    const storeToken = async (user) => {
+        user.getIdToken(/* forceRefresh */ true)
+            .then(idToken => {
+                sessionStorage.setItem('token', idToken);
+                navigate(from);
+            }).catch(error => {
+                console.log(error)
+            });
+    }
+
+
 
     return (
         <div className='container'>
