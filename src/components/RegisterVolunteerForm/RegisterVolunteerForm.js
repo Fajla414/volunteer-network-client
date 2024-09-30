@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form"
 import { MyContext } from '../../App';
 
 
-const RegisterVolunteerForm = ({ voulnteerId, handleAlert }) => {
+const RegisterVolunteerForm = ({ voulnteerId, adminVolunteerListName, handleAlert }) => {
     const [loggedInUser, setLoggedInUser] = useContext(MyContext);
 
     const {
@@ -12,10 +12,10 @@ const RegisterVolunteerForm = ({ voulnteerId, handleAlert }) => {
         formState: { errors },
     } = useForm()
 
-    
+
 
     const onSubmit = (data) => {
-        const info = { ...loggedInUser, data, id: voulnteerId };
+        const info = { ...loggedInUser, data, id: voulnteerId, adminVolunteerListName };
         fetch(`http://localhost:5000/registeredVolunteer`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from '../../images/logo.png';
 import './RegisterVolunteer.css';
 import RegisterVolunteerForm from '../RegisterVolunteerForm/RegisterVolunteerForm';
@@ -6,9 +6,18 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 
 const RegisterVolunteer = () => {
+    const [adminVolunteerList, setAdminVolunteerList] = useState([]);
     const navigate = useNavigate();
     const { id } = useParams();
     const [alert, setAlert] = useState(false);
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/getItem/${id}`)
+            .then(res => res.json())
+            .then(data => {
+                setAdminVolunteerList(data[0].name);
+            })
+    }, [])
 
 
     let successAlert;
@@ -42,7 +51,7 @@ const RegisterVolunteer = () => {
             <div className="row my-5">
                 <div className="col-md-4 m-auto border rounded px-4 py-4">
                     <h4 className='fs-4 mb-4'>Register as a Volunteer</h4>
-                    <RegisterVolunteerForm handleAlert={handleAlert} voulnteerId={id} />
+                    <RegisterVolunteerForm handleAlert={handleAlert} adminVolunteerListName={adminVolunteerList} voulnteerId={id} />
                 </div>
             </div>
         </div>

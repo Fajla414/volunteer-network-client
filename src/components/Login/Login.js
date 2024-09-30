@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { initializeApp } from "firebase/app";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import logo from '../../images/logo.png';
 import './login.css';
